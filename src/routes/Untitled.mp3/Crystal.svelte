@@ -1,17 +1,10 @@
 <script lang='ts'>
-    import lock from '$lib/images/icon-lock.svg';
-    import gekishou from '$lib/images/gekishou.webp'
-    import shou from '$lib/images/shou.webp'
-
-    import jacket1 from '$lib/images/jacket_001.jpg'
-    import jacket2 from '$lib/images/jacket_002.jpg'
-    import jacket3 from '$lib/images/jacket_003.jpg'
     import '$lib/styles/shaking.css';
 
     export let locked: number;
     export let index: number
 
-    let jacket = (index: number) => [jacket1, null, jacket3, jacket2][index];  
+   // let jacket = (index: number) => [jacket1, null, jacket3, jacket2][index];  
     let basicClass = 'image image-blur';
     let cssClass = (index: number) => [`${basicClass} up`, `${basicClass} right`, `${basicClass} left`, `${basicClass} down`][index];
 
@@ -24,8 +17,6 @@
 
 {#if locked == 2}
     <div class='lock' on:click={addClassTemporarily}></div>
-{:else}
-    <img class={cssClass(index)} src={jacket(index)}>
 {/if}
 
 <style>
