@@ -1,22 +1,35 @@
 <script lang='ts'>
     import '$lib/styles/shaking.css';
+	import { createEventDispatcher } from 'svelte';
+    import type { HintPermission, HintStatus, SongData } from '$lib/types';
+    import { goto } from '$app/navigation';
 
-    export let locked: number;
-    export let index: number
+	const dispatch = createEventDispatcher();
 
-   // let jacket = (index: number) => [jacket1, null, jacket3, jacket2][index];  
-    let basicClass = 'image image-blur';
+    export let perms: HintPermission;
+    export let index: number;
+    export let songData: SongData;
+
+    const redirectHints = () => goto(songData.hintsUrl);
+    const redirectResult = () => goto(songData.resultUrl);
+
+    const basicClass = 'image'
     let cssClass = (index: number) => [`${basicClass} up`, `${basicClass} right`, `${basicClass} left`, `${basicClass} down`][index];
 
     function addClassTemporarily(e: MouseEvent & { currentTarget: EventTarget & HTMLDivElement; }) {
         e.currentTarget.classList.remove('shaking');
         e.currentTarget.offsetWidth;
         e.currentTarget.classList.add('shaking');
+        dispatch('tap', { index });
     }
 </script>
 
-{#if locked == 2}
+{#if perms.status == 'LOCKED'}
     <div class='lock' on:click={addClassTemporarily}></div>
+{:else if perms.status == 'HINTS'}
+    <img src={songData.img} class={cssClass(index)} on:click={redirectHints}>
+{:else}
+    <img class={cssClass(index)} src={songData.songInfo.image} on:click={redirectResult}>
 {/if}
 
 <style>

@@ -1,5 +1,4 @@
 <script lang='ts'>
-	import Header from './Header.svelte';
 	import '../lib/styles/styles.css';
 	import '../lib/styles/background-anim.css'
 

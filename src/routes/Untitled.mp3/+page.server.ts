@@ -1,7 +1,16 @@
-import { displayData } from './../../lib/server/access_check';
+import { loadPerms } from './../../lib/server/data';
+import { loadData } from './../../lib/server/access_check';
 
 export function load({ params }) {
+    const perms = loadPerms();
+    const songInfo = loadData();
+    const enablePuzzle = perms.every(_ => _.status == 'LOCKED');
+
     return {
-        text: displayData()
+        info: perms.map((_, i) => ({
+            perms: _,
+            songInfo: songInfo[i]
+        })), // zip
+        enablePuzzle: enablePuzzle
     }
 }

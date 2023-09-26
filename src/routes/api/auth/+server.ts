@@ -1,4 +1,4 @@
-import { setPerms } from '$lib/server/access_check';
+import { setPerms } from '$lib/server/data';
 import { comparePassword } from '$lib/server/util/crypt'
 import { text, json } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
@@ -10,6 +10,7 @@ export async function POST({ request, locals } : RequestEvent)
         return json("not auth");
 
     const perms = await request.json();
+    console.log(JSON.stringify(perms));
     setPerms(perms);
     return json("success");
 }
