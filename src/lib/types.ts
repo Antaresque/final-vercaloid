@@ -1,10 +1,23 @@
 
 export type SongData = {
     img: string,
-    songInfo: any, // change later
+    songInfo: SongInfo, // change later
     hintsUrl: string,
     resultUrl: string,
     hints: HintData[],
+}
+
+export type SongInfo = {
+    title: string;
+    titleJP: string;
+    artist: string;
+    artistJP: string;
+    ogImage: string;
+    youtubeLink: string;
+    sonolusLink: string;
+    audioClip: string;
+    difficultyLevel: string;
+    bpm: string;
 }
 
 export type HintData = {
