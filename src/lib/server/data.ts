@@ -62,6 +62,7 @@ export const songInfo = [
 ];
 
 export const loadPerms = () => perms;
+export const loadDataRaw = () => data;
 
 export const setPerms = (value: HintPermission[]) => perms = value;
 export const changeStatus = (status: HintStatus, index: number) => {
