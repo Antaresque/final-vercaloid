@@ -40,9 +40,11 @@
 
         click = true;
         audio.play();
+        audio.pause();
 
         setTimeout(() => {
             audio.volume = 0.2;
+            audio.currentTime = 0;
             audio.play();
         }, 1000)
 
