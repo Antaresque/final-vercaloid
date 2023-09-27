@@ -9,6 +9,8 @@
     let imageflip = false;
     let hidden = true;
 
+    let audio: HTMLAudioElement;
+
     const songinfo = (data.songInfo.songInfo as SongInfo);
     const img = songinfo.ogImage;
 
@@ -22,15 +24,20 @@
             return;
         }
            
-        const audio = document.createElement('audio');
+        audio = document.createElement('audio');
         audio.preload = 'auto';
         audio.src = songinfo.audioClip;
-        audio.volume = 0.2;
+        audio.volume = 0;
         document.body.appendChild(audio);
 
         const image = document.getElementsByClassName('imagetest')[0];
-       
+    })
+
+    function onClick() {
+        audio.play();
+
         setTimeout(() => {
+            audio.volume = 0.2;
             audio.play();
         }, 1000)
 
@@ -38,8 +45,8 @@
             imageflip = true;
             hidden = false;
             window.localStorage.setItem('duoAnimation', 'true'); 
-        }, 4000)
-    })
+        }, 4000)        
+    }
 
 </script>
 

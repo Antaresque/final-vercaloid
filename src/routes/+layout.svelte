@@ -8,6 +8,8 @@
 
 	function reveal() {
 		overlay.classList.add('overlay-disappear');
+	
+
 		setTimeout(() => overlay.parentNode?.removeChild(overlay), 2000);
 	}
 </script>
