@@ -1,7 +1,7 @@
 
 export type SongData = {
     img: string,
-    songInfo: SongInfo, // change later
+    songInfo: SongInfo | {}, 
     hintsUrl: string,
     resultUrl: string,
     hints: HintData[],
@@ -18,6 +18,7 @@ export type SongInfo = {
     audioClip: string;
     difficultyLevel: string;
     bpm: string;
+    progress: number;
 }
 
 export type HintData = {

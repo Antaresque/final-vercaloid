@@ -1,7 +1,7 @@
 <script lang='ts'>
     import '$lib/styles/shaking.css';
-	import { createEventDispatcher } from 'svelte';
-    import type { HintPermission, HintStatus, SongData } from '$lib/types';
+	import { createEventDispatcher, onMount } from 'svelte';
+    import type { HintPermission, HintStatus, SongData, SongInfo } from '$lib/types';
     import { goto } from '$app/navigation';
 
 	const dispatch = createEventDispatcher();
@@ -9,6 +9,8 @@
     export let perms: HintPermission;
     export let index: number;
     export let songData: SongData;
+
+    let songInfo = (songData.songInfo as SongInfo)
 
     const redirectHints = () => goto(songData.hintsUrl);
     const redirectResult = () => goto(songData.resultUrl);
@@ -20,8 +22,19 @@
         e.currentTarget.classList.remove('shaking');
         e.currentTarget.offsetWidth;
         e.currentTarget.classList.add('shaking');
-        dispatch('tap', { index });
+        //dispatch('tap', { index });
     }
+
+    onMount(() => {
+        if(index !== 0)
+            return;
+        const isAnimationDone = window.localStorage.getItem('duoAnimation');
+
+        if(isAnimationDone !== 'true'){
+            
+        }
+    });
+
 </script>
 
 {#if perms.status == 'LOCKED'}
@@ -29,7 +42,7 @@
 {:else if perms.status == 'HINTS'}
     <img src={songData.img} class={cssClass(index)} on:click={redirectHints}>
 {:else}
-    <img class={cssClass(index)} src={songData.songInfo.image} on:click={redirectResult}>
+    <img class={cssClass(index)} src={songInfo.ogImage} on:click={redirectResult}>
 {/if}
 
 <style>
