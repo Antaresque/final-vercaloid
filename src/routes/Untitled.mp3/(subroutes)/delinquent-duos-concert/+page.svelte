@@ -33,7 +33,12 @@
         const image = document.getElementsByClassName('imagetest')[0];
     })
 
+    let click = false;
     function onClick() {
+        if(click)
+            return;
+
+        click = true;
         audio.play();
 
         setTimeout(() => {
@@ -53,7 +58,7 @@
 
 <div class='center'>
     <div class='gallery'>
-        <img src={img} class='imagetest' class:imageflip>
+        <img src={img} class='imagetest' class:imageflip on:click={onClick}>
     </div>
 
     <div class="right-menu" class:hidden>
