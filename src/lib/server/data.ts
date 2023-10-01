@@ -11,7 +11,7 @@ export let perms: HintPermission[] = [
         { done: false, hint: true },
         { done: false, hint: true },
         { done: false, hint: true },
-        { done: false, hint: true },
+        { done: true, hint: true },
     ]},
     { status: 'LOCKED', hints: [
         { done: false, hint: false },
@@ -38,7 +38,7 @@ export const data = [
         { name: "The palish mirror image", hint: '(requires result screenshot)', solution: 'Have a result of Haikei Doppelganger, with black&white or similar filter' },
         { name: "Half-torn songs none would sing", hint: '(requires result screenshot)', solution: 'Have a result of MGPD, with less than half of perfects' },
         { name: "Choosing a voice to pierce the silence", hint: '', solution: 'Have a screenshot of options, where the SE and BGM are muted, while voice is set to a volume above 0' },
-        { name: "A false ending to endings", hint: '', solution: 'Have a screenshot of losing a Shoushitsu show on the last note' }
+        { name: "A false ending to endings", hint: '', solution: 'Have a screenshot during Gehenna show, without notes currently on the screen' }
     ]},
     { img: 'jacket_duo.jpg', hintsUrl: 'delinquent-duo', resultUrl: 'delinquent-duo-final', songInfo: {}, hints: [
         { name: "Family outing", hint: '', solution: 'Have a result of a sibling song with one of the siblings in the result' },
