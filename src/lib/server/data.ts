@@ -7,11 +7,11 @@ export let perms: HintPermission[] = [
         { done: true, hint: false },
         { done: true, hint: false },
     ]},
-    { status: 'LOCKED', hints: [
-        { done: false, hint: false },
-        { done: false, hint: false },
-        { done: false, hint: false },
-        { done: false, hint: false },
+    { status: 'HINTS', hints: [
+        { done: false, hint: true },
+        { done: false, hint: true },
+        { done: false, hint: true },
+        { done: false, hint: true },
     ]},
     { status: 'LOCKED', hints: [
         { done: false, hint: false },
@@ -34,11 +34,11 @@ export const data = [
         { name: "A duo of glowsticks", hint: '', solution: 'Have at least two people together in a Virtual Show room' },
         { name: "Showtime is over", hint: '', solution: 'Have a picture of losing a Showtime Ruler show, with Failed' }
     ]},
-    { img: 'jacket_duo.jpg', hintsUrl: 'Untitled.mp3/delinquent-duo', resultUrl: 'delinquent-duo-final', songInfo: {}, hints: [
-        { name: "Family outing", hint: '', solution: 'Have a result of a sibling song with one of the siblings in the result' },
-        { name: "A mascot concert", hint: '', solution: 'Have a result for Miku with one of her solo songs' },
-        { name: "A duo of glowsticks", hint: '', solution: 'Have at least two people together in a Virtual Show room' },
-        { name: "Showtime is over", hint: '', solution: 'Have a picture of losing a Showtime Ruler show, with Failed' }
+    { img: 'https://i.imgur.com/txkYRWp.png', hintsUrl: 'Untitled.mp3/noir-storm', resultUrl: 'Untitled.mp3', songInfo: {}, hints: [
+        { name: "The palish mirror image", hint: '(requires result screenshot)', solution: 'Have a result of Haikei Doppelganger, with black&white or similar filter' },
+        { name: "Half-torn songs none would sing", hint: '(requires result screenshot)', solution: 'Have a result of MGPD, with less than half of perfects' },
+        { name: "Choosing a voice to pierce the silence", hint: '', solution: 'Have a screenshot of options, where the SE and BGM are muted, while voice is set to a volume above 0' },
+        { name: "A false ending to endings", hint: '', solution: 'Have a screenshot of losing a Shoushitsu show on the last note' }
     ]},
     { img: 'jacket_duo.jpg', hintsUrl: 'delinquent-duo', resultUrl: 'delinquent-duo-final', songInfo: {}, hints: [
         { name: "Family outing", hint: '', solution: 'Have a result of a sibling song with one of the siblings in the result' },
@@ -57,7 +57,7 @@ export const data = [
 export const songInfo = [
     { title: 'Yattare! Ongassen', titleJP: 'やったれ！音合戦', artist: 'marasy', artistJP: 'まらしぃ', ogImage: 'http://i.imgur.com/zx4QPhe.jpg', 
       youtubeLink: 'https://www.youtube.com/watch?v=vsbaSbm09SM', sonolusLink: 'https://cc.sevenc7c.com/charts/3szZ4zLB9aGsquMEEgnH7BU',
-      audioClip: 'https://puu.sh/JQUu3/0516212026.mp3', difficultyLevel: '32', progress: 0
+      audioClip: 'https://puu.sh/JQUu3/0516212026.mp3', difficultyLevel: '32', progress: 100
     },
     { title: 'Yattare! Ongassen', titleJP: 'やったれ！音合戦', artist: 'marasy', artistJP: 'まらしぃ', ogImage: 'http://i.imgur.com/zx4QPhe.jpg', 
       youtubeLink: 'https://www.youtube.com/watch?v=vsbaSbm09SM', sonolusLink: 'https://cc.sevenc7c.com/charts/3szZ4zLB9aGsquMEEgnH7BU',

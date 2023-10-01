@@ -13,20 +13,44 @@
     <div class='gallery'>
         <div class='top left'> 
             <p class={strike(0)}>{data.songInfo.hints[0].name}</p>
-            <span>{data.songInfo.hints[0].solution}</span>
+            <span>
+                {#if data.perms.hints[0].done}
+                    {data.songInfo.hints[0].solution}
+                {:else if data.songInfo.hints[0].hint !== ''}
+                    {data.songInfo.hints[0].hint}
+                {/if}
+            </span>
         </div>
         <div class='top right'>
             <p class={strike(1)}>{data.songInfo.hints[1].name}</p>
-            <span>{data.songInfo.hints[1].solution}</span>
+            <span>
+                {#if data.perms.hints[1].done}
+                    {data.songInfo.hints[1].solution}
+                {:else if data.songInfo.hints[1].hint !== ''}
+                    {data.songInfo.hints[1].hint}
+                {/if}
+            </span>
         </div>
         <img src={img} class='image'>
         <div class='bottom left'> 
             <p class={strike(2)}>{data.songInfo.hints[2].name}</p>
-            <span>{data.songInfo.hints[2].solution}</span>
+            <span>
+                {#if data.perms.hints[2].done}
+                    {data.songInfo.hints[2].solution}
+                {:else if data.songInfo.hints[2].hint !== ''}
+                    {data.songInfo.hints[2].hint}
+                {/if}
+            </span>
         </div>
         <div class='bottom right'>
             <p class={strike(3)}>{data.songInfo.hints[3].name}</p>
-            <span>{data.songInfo.hints[3].solution}</span>
+            <span>
+                {#if data.perms.hints[3].done}
+                    {data.songInfo.hints[3].solution}
+                {:else if data.songInfo.hints[3].hint !== ''}
+                    {data.songInfo.hints[3].hint}
+                {/if}
+            </span>
         </div>
     </div>
 </div>
@@ -72,6 +96,28 @@
         bottom: 0px;
     }
 
+    @media only screen and (max-width: 700px) {
+    .gallery > div {
+        height: 150px;
+    }
+    .gallery > div.top {
+        top: -100px;
+    }
+
+    .gallery > div.bottom {
+        bottom: -100px;
+    }
+
+    .gallery > div.left > p, .gallery > div.left > span {
+        text-align: left;
+        margin-right: 30px;
+    }
+    .gallery > div.right > p, .gallery > div.right > span {
+        text-align: right;
+        margin-left: 30px;
+    }
+    }
+
     .gallery > div.left {
         left: clamp(-335px, calc((500px - 100vw)/2 - 35px), 0px);
         align-items: flex-start;
@@ -101,6 +147,7 @@
         object-fit: cover;
         clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
         filter: opacity(100%) blur(0px);
+        width: 400px;
     }
 
     span {

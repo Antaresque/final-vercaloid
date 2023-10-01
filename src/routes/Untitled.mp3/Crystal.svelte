@@ -25,16 +25,6 @@
         //dispatch('tap', { index });
     }
 
-    onMount(() => {
-        if(index !== 0)
-            return;
-        const isAnimationDone = window.localStorage.getItem('duoAnimation');
-
-        if(isAnimationDone !== 'true'){
-            
-        }
-    });
-
 </script>
 
 {#if perms.status == 'LOCKED'}
@@ -103,6 +93,16 @@
 
     .up:hover {
         transform: scale(207%) rotate(-45deg) translateY(25%);
+        z-index: 10;
+    }
+
+    .left:hover {
+        transform: scale(207%) rotate(-45deg) translateX(25%);
+        z-index: 10;
+    }
+
+    .right:hover {
+        transform: scale(207%) rotate(-45deg) translateX(-25%);
         z-index: 10;
     }
 </style>

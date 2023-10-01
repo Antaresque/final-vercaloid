@@ -5,13 +5,6 @@
     import MelodyController from "./MelodyController";
 
     export let data: PageData;
-    // check completion of puzzle
-    onMount(() => { 
-        const isAnimationDone = window.localStorage.getItem('duoAnimation');
-        if(isAnimationDone !== 'true') {
-            data.info[0].perms.status = 'HINTS';
-        }
-    });
 
 </script>
 
