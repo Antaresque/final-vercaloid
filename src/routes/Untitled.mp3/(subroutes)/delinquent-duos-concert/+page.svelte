@@ -17,50 +17,16 @@
     const progress = songinfo.progress;
 
     onMount(() => {
-        const isAnimationDone = window.localStorage.getItem('duoAnimation');
-        if(isAnimationDone === 'true'){
-            imageflip = true;
-            hidden = false;
-            return;
-        }
-           
-        audio = document.createElement('audio');
-        audio.preload = 'auto';
-        audio.src = songinfo.audioClip;
-        audio.volume = 0;
-        document.body.appendChild(audio);
-
-        const image = document.getElementsByClassName('imagetest')[0];
+        imageflip = true;
+        hidden = false;
     })
-
-    let click = false;
-    function onClick() {
-        if(click)
-            return;
-
-        click = true;
-        audio.play();
-        audio.pause();
-
-        setTimeout(() => {
-            audio.volume = 0.2;
-            audio.currentTime = 0;
-            audio.play();
-        }, 1000)
-
-        setTimeout(() => {
-            imageflip = true;
-            hidden = false;
-            window.localStorage.setItem('duoAnimation', 'true'); 
-        }, 4000)        
-    }
 
 </script>
 
 
 <div class='center'>
     <div class='gallery'>
-        <img src={img} class='imagetest' class:imageflip on:click={onClick}>
+        <img src={img} class='imagetest' class:imageflip>
     </div>
 
     <div class="right-menu" class:hidden>
