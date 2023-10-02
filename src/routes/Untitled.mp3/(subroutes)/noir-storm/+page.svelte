@@ -121,25 +121,25 @@
     }
 
     @media only screen and (max-width: 700px) {
-    .gallery > div {
-        height: 150px;
-    }
-    .gallery > div.top {
-        top: -100px;
-    }
+        .gallery > div {
+            height: 150px;
+        }
+        .gallery > div.top {
+            top: -100px;
+        }
 
-    .gallery > div.bottom {
-        bottom: -100px;
-    }
+        .gallery > div.bottom {
+            bottom: -100px;
+        }
 
-    .gallery > div.left > p, .gallery > div.left > span {
-        text-align: left;
-        margin-right: 30px;
-    }
-    .gallery > div.right > p, .gallery > div.right > span {
-        text-align: right;
-        margin-left: 30px;
-    }
+        .gallery > div.left > p, .gallery > div.left > span {
+            text-align: left;
+            margin-right: 30px;
+        }
+        .gallery > div.right > p, .gallery > div.right > span {
+            text-align: right;
+            margin-left: 30px;
+        }
     }
 
     .gallery > div.left {
@@ -172,10 +172,12 @@
         clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
         filter: opacity(100%) blur(0px);
         width: 400px;
+        transform: rotate(0deg);
+        transition: transform 2s ease-in-out;
     }
 
     .image-start {
-        transform: rotate(45deg)
+        transform: rotate(45deg);
     }
 
     span {
