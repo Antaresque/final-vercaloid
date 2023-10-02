@@ -8,8 +8,8 @@ export let perms: HintPermission[] = [
         { done: true, hint: false },
     ]},
     { status: 'HINTS', hints: [
-        { done: false, hint: true },
-        { done: false, hint: true },
+        { done: true, hint: true },
+        { done: true, hint: true },
         { done: false, hint: true },
         { done: true, hint: true },
     ]},
