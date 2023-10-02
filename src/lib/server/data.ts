@@ -12,7 +12,7 @@ export let perms: HintPermission[] = [
         { done: true, hint: true },
         { done: true, hint: true },
         { done: true, hint: true },
-    ]},
+    ]}, 
     { status: 'LOCKED', hints: [
         { done: false, hint: false },
         { done: false, hint: false },
