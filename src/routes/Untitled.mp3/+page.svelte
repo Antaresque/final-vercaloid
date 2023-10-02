@@ -5,6 +5,13 @@
     import MelodyController from "./MelodyController";
 
     export let data: PageData;
+ 
+    onMount(() => { 
+        const isAnimationDone = window.localStorage.getItem('noirAnimation');
+        if(isAnimationDone !== 'true') {
+            data.info[1].perms.status = 'HINTS';
+        }
+    });
 
 </script>
 

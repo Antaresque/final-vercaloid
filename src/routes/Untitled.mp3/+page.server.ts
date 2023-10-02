@@ -6,9 +6,6 @@ export function load({ params }) {
     const songInfo = loadData();
     const enablePuzzle = perms.every(_ => _.status == 'LOCKED');
 
-    console.log(perms);
-    console.log(songInfo);
-
     return {
         info: perms.map((_, i) => ({
             perms: _,

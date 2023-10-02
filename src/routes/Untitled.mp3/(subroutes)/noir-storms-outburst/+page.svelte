@@ -1,8 +1,8 @@
 <script lang="ts">
     import '$lib/styles/progress-bar.css'
     import { onMount } from "svelte";
-    import type { PageData } from "./$types";
     import type { SongInfo } from "$lib/types";
+    import type { PageData } from './$types';
 
     export let data: PageData
     let imageflip = false;
@@ -16,25 +16,57 @@
     const progress = songinfo.progress;
 
     onMount(() => {
-        imageflip = true;
-        hidden = false;
+        const isAnimationDone = window.localStorage.getItem('noirAnimation');
+        if(isAnimationDone === 'true'){
+            imageflip = true;
+            hidden = false;
+            return;
+        }
+           
+        audio = document.createElement('audio');
+        audio.preload = 'auto';
+        audio.src = songinfo.audioClip;
+        audio.volume = 0;
+        document.body.appendChild(audio);
     })
+
+    let click = false;
+    function onClick() {
+        if(click)
+            return;
+
+        click = true;
+        audio.play();
+        audio.pause();
+
+        setTimeout(() => {
+            audio.volume = 0.2;
+            audio.currentTime = 0;
+            audio.play();
+        }, 1000)
+
+        setTimeout(() => {
+            imageflip = true;
+            hidden = false;
+            window.localStorage.setItem('noirAnimation', 'true'); 
+        }, 11000)        
+    }
 
 </script>
 
 
 <div class='center'>
     <div class='gallery'>
-        <img src={img} class='imagetest' class:imageflip>
+        <img src={img} class='imagetest' class:imageflip on:click={onClick}>
     </div>
 
     <div class="right-menu" class:hidden>
-        <p class='diff-icon'>32</p>
+        <p class='diff-icon'>33</p>
 
         <div class='title'>
             <h2>{songinfo.titleJP} - {songinfo.artistJP}</h2>
             <h3>{songinfo.title} - {songinfo.artist}</h3>
-            <h4>Charted by Chinori</h4>
+            <h4>Charted by Commi</h4>
         </div>
         
         <br> 

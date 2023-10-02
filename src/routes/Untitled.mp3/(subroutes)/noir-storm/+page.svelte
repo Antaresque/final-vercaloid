@@ -1,4 +1,7 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
+    import { onMount } from "svelte";
+    import { shuffleLetters } from "../../shuffleAnimation";
     import type { PageData } from "./$types";
 
     export let data: PageData
@@ -6,12 +9,27 @@
 
     const strike = (index: number) => (data.perms.hints[index].done) ? 'strikethrough' : '';
 
+    onMount(() => {
+        const letterMixing = setInterval(() => data.songInfo.hints = shuffleLetters(data.songInfo.hints), 100);
+        setTimeout(() => {
+            const hints = document.getElementsByClassName('fading');
+            for(let hint of hints) 
+                hint.classList.add('fading-start');
+        }, 4000); 
+        setTimeout(() => document.getElementsByClassName('image')[0].classList.add('image-start'), 8000);
+        setTimeout(() => clearInterval(letterMixing), 8000);  
+        setTimeout(() => document.getElementsByClassName('gallery')[0].classList.add('gallery-start'), 10000);
+        setTimeout(() => {
+            goto('noir-storms-outburst');
+        }, 10000);
+    })
+
 </script>
 
 
 <div class='center'>
     <div class='gallery'>
-        <div class='top left'> 
+        <div class='top left fading'> 
             <p class={strike(0)}>{data.songInfo.hints[0].name}</p>
             <span>
                 {#if data.perms.hints[0].done}
@@ -21,7 +39,7 @@
                 {/if}
             </span>
         </div>
-        <div class='top right'>
+        <div class='top right fading'>
             <p class={strike(1)}>{data.songInfo.hints[1].name}</p>
             <span>
                 {#if data.perms.hints[1].done}
@@ -32,7 +50,7 @@
             </span>
         </div>
         <img src={img} class='image'>
-        <div class='bottom left'> 
+        <div class='bottom left fading'> 
             <p class={strike(2)}>{data.songInfo.hints[2].name}</p>
             <span>
                 {#if data.perms.hints[2].done}
@@ -42,7 +60,7 @@
                 {/if}
             </span>
         </div>
-        <div class='bottom right'>
+        <div class='bottom right fading'>
             <p class={strike(3)}>{data.songInfo.hints[3].name}</p>
             <span>
                 {#if data.perms.hints[3].done}
@@ -67,7 +85,13 @@
     .gallery {
         position: absolute;
         overflow: visible !important;
+        transition: position 2s ease-in-out;
     }
+
+    .gallery-start {
+        position: relative;
+    }
+
 
     .gallery > div {
         position: absolute;
@@ -150,6 +174,10 @@
         width: 400px;
     }
 
+    .image-start {
+        transform: rotate(45deg)
+    }
+
     span {
         font-size: 0.75rem;
         color: #999999;
@@ -167,5 +195,26 @@
 
     .strikethrough {
         text-decoration: line-through;
+    }
+
+    .fading {
+        transition: opacity 4s ease-in-out;
+        opacity: 1;
+    }
+
+    .fading-start {
+        opacity: 0
+    }
+
+    .right-menu {
+        display: none;
+        opacity: 0;
+        background-color: white;
+        transition: opacity 1s ease-in 0s;
+    }
+
+    .right-menu-start {
+        display: block;
+        opacity: 1;
     }
 </style>
