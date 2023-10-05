@@ -41,8 +41,8 @@ export const data = [
         { name: "A false ending to endings", hint: '', solution: 'Have a screenshot during Gehenna show, without notes currently on the screen' }
     ]},
     { img: 'https://i.imgur.com/UJJ5reE.png', hintsUrl: 'Untitled.mp3/forbidden-spear', resultUrl: 'Untitled.mp3', songInfo: {}, hints: [
-        { name: "A childish viral clip", hint: '(requires result screenshot)', solution: 'Have \"69\" somewhere in an Ifuudoudou result' },
-        { name: "+danshi", hint: '(requires result screenshot)', solution: 'Have a result on a Giga-P song with Len in the result screen' },
+        { name: "A childish viral clip", hint: '(requires result screenshot)', solution: 'Have \"69\" somewhere in an Ifuudoudou result #funny' },
+        { name: "+danshi", hint: '(requires result screenshot)', solution: 'Have a result on a Giga-P song with D rank #funny' },
         { name: "A sudden group explosion", hint: '', solution: 'Have a result of all members in a coop fail during the match (by misscount or by in-game screen)' },
         { name: "Flow upward, release", hint: '', solution: 'Have a picture of missing up arrow hold' }
     ]},
