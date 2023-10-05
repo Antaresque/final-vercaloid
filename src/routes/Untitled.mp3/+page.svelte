@@ -7,10 +7,10 @@
     export let data: PageData;
  
     onMount(() => { 
-        const isAnimationDone = window.localStorage.getItem('noirAnimation');
-        if(isAnimationDone !== 'true') {
-            data.info[1].perms.status = 'HINTS';
-        }
+        // const isAnimationDone = window.localStorage.getItem('noirAnimation');
+        // if(isAnimationDone !== 'true') {
+        //     data.info[2].perms.status = 'HINTS';
+        // }
     });
 
 </script>
