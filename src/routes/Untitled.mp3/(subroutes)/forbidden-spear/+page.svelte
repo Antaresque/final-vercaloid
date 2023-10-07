@@ -26,7 +26,7 @@
 
 <div class='center'>
     <div class='gallery'>
-        <div class='top left'> 
+        <div class='top left fading'> 
             <p class={strike(0)}>{data.songInfo.hints[0].name}</p>
             <span>
                 {#if data.perms.hints[0].done}
@@ -36,7 +36,7 @@
                 {/if}
             </span>
         </div>
-        <div class='top right'>
+        <div class='top right fading'>
             <p class={strike(1)}>{data.songInfo.hints[1].name}</p>
             <span>
                 {#if data.perms.hints[1].done}
@@ -47,7 +47,7 @@
             </span>
         </div>
         <img src={img} class='image'>
-        <div class='bottom left'> 
+        <div class='bottom left fading'> 
             <p class={strike(2)}>{data.songInfo.hints[2].name}</p>
             <span>
                 {#if data.perms.hints[2].done}
@@ -57,7 +57,7 @@
                 {/if}
             </span>
         </div>
-        <div class='bottom right'>
+        <div class='bottom right fading'>
             <p class={strike(3)}>{data.songInfo.hints[3].name}</p>
             <span>
                 {#if data.perms.hints[3].done}
