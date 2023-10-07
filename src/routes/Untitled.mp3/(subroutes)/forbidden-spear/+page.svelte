@@ -1,8 +1,26 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+    import { shuffleLetters } from "../../shuffleAnimation";
     import type { PageData } from "./$types";
+    import { goto } from "$app/navigation";
     export let data: PageData
     const img = data.songInfo.img;
     const strike = (index: number) => (data.perms.hints[index].done) ? 'strikethrough' : '';
+
+    onMount(() => {
+        const letterMixing = setInterval(() => data.songInfo.hints = shuffleLetters(data.songInfo.hints), 100);
+        setTimeout(() => {
+            const hints = document.getElementsByClassName('fading');
+            for(let hint of hints) 
+                hint.classList.add('fading-start');
+        }, 4000); 
+        setTimeout(() => document.getElementsByClassName('image')[0].classList.add('image-start'), 8000);
+        setTimeout(() => clearInterval(letterMixing), 8000);  
+        setTimeout(() => document.getElementsByClassName('gallery')[0].classList.add('gallery-start'), 10000);
+        setTimeout(() => {
+            goto('forbidden-spears-requiem');
+        }, 10000);
+    })
 </script>
 
 
@@ -63,7 +81,13 @@
     .gallery {
         position: absolute;
         overflow: visible !important;
+        transition: position 2s ease-in-out;
     }
+
+    .gallery-start {
+        position: relative;
+    }
+
     .gallery > div {
         position: absolute;
         color: white;
@@ -133,7 +157,14 @@
         clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
         filter: opacity(100%) blur(0px);
         width: 400px;
+        transition: transform 2s ease-in-out;
     }
+
+    .image-start {
+        transform: rotate(45deg);
+    }
+
+
     span {
         font-size: 0.75rem;
         color: #999999;
@@ -148,5 +179,26 @@
     }
     .strikethrough {
         text-decoration: line-through;
+    }
+
+    .fading {
+        transition: opacity 4s ease-in-out;
+        opacity: 1;
+    }
+
+    .fading-start {
+        opacity: 0
+    }
+
+    .right-menu {
+        display: none;
+        opacity: 0;
+        background-color: white;
+        transition: opacity 1s ease-in 0s;
+    }
+
+    .right-menu-start {
+        display: block;
+        opacity: 1;
     }
 </style>

@@ -13,7 +13,7 @@ export let perms: HintPermission[] = [
         { done: true, hint: true },
         { done: true, hint: true },
     ]}, 
-    { status: 'HINTS', hints: [
+    { status: 'OPEN', hints: [
         { done: true, hint: false },
         { done: true, hint: false },
         { done: true, hint: false },
@@ -40,7 +40,7 @@ export const data = [
         { name: "Choosing a voice to pierce the silence", hint: '', solution: 'Have a screenshot of options, where the SE and BGM are muted, while voice is set to a volume above 0' },
         { name: "A false ending to endings", hint: '', solution: 'Have a screenshot during Gehenna show, without notes currently on the screen' }
     ]},
-    { img: 'https://i.imgur.com/UJJ5reE.png', hintsUrl: 'Untitled.mp3/forbidden-spear', resultUrl: 'Untitled.mp3', songInfo: {}, hints: [
+    { img: 'https://i.imgur.com/UJJ5reE.png', hintsUrl: 'Untitled.mp3/forbidden-spear', resultUrl: 'Untitled.mp3/forbidden-spears-requiem', songInfo: {}, hints: [
         { name: "A childish viral clip", hint: '(requires result screenshot)', solution: 'Have \"69\" somewhere in an Ifuudoudou result #funny' },
         { name: "+danshi", hint: '(requires result screenshot)', solution: 'Have a result on a Giga-P song with D rank #funny' },
         { name: "A sudden group explosion", hint: '', solution: 'Have a result of all members in a coop fail during the match (by misscount or by in-game screen)' },
@@ -63,9 +63,9 @@ export const songInfo = [
       youtubeLink: 'https://www.youtube.com/watch?v=3nSO6Ad_Na4', sonolusLink: 'https://cc.sevenc7c.com/charts/AP9BgjTSZQyuhXEet4UKxMG',
       audioClip: 'https://puu.sh/JRm18/d96ab62994.mp3', difficultyLevel: '33', bpm: '240', progress: 100
     },
-    { title: 'Yattare! Ongassen', titleJP: 'やったれ！音合戦', artist: 'marasy', artistJP: 'まらしぃ', ogImage: 'http://i.imgur.com/zx4QPhe.jpg', 
-      youtubeLink: 'https://www.youtube.com/watch?v=vsbaSbm09SM', sonolusLink: 'https://cc.sevenc7c.com/charts/3szZ4zLB9aGsquMEEgnH7BU',
-      audioClip: 'https://puu.sh/JQUu3/0516212026.mp3', difficultyLevel: '32', bpm: '190', progress: 0
+    { title: 'Holy Lance Explosion Boy', titleJP: '聖槍爆裂ボーイ', artist: 'rerulili', artistJP: 'れるりり', ogImage: 'https://i.imgur.com/ycAeJ8m.jpeg', 
+      youtubeLink: 'https://www.youtube.com/watch?v=MqNmKnCNLyM', sonolusLink: 'https://cc.sevenc7c.com/charts/3x4c8RqNpjMV3UuPcZ9dp2t',
+      audioClip: 'https://puu.sh/JRJl3/44214327bb.mp3', difficultyLevel: '33', bpm: '155', progress: 0
     },
     { title: 'Yattare! Ongassen', titleJP: 'やったれ！音合戦', artist: 'marasy', artistJP: 'まらしぃ', ogImage: 'http://i.imgur.com/zx4QPhe.jpg', 
       youtubeLink: 'https://www.youtube.com/watch?v=vsbaSbm09SM', sonolusLink: 'https://cc.sevenc7c.com/charts/3szZ4zLB9aGsquMEEgnH7BU',

@@ -16,16 +16,48 @@
     const progress = songinfo.progress;
 
     onMount(() => {
-        imageflip = true;
-        hidden = false;
+        const isAnimationDone = window.localStorage.getItem('lanceAnimation');
+        if(isAnimationDone === 'true'){
+            imageflip = true;
+            hidden = false;
+            return;
+        }
+           
+        audio = document.createElement('audio');
+        audio.preload = 'auto';
+        audio.src = songinfo.audioClip;
+        audio.volume = 0;
+        document.body.appendChild(audio);
     })
+
+    let click = false;
+    function onClick() {
+        if(click)
+            return;
+
+        click = true;
+        audio.play();
+        audio.pause();
+
+        setTimeout(() => {
+            audio.volume = 0.2;
+            audio.currentTime = 0;
+            audio.play();
+        }, 1000)
+
+        setTimeout(() => {
+            imageflip = true;
+            hidden = false;
+            window.localStorage.setItem('lanceAnimation', 'true'); 
+        }, 5000)        
+    }
 
 </script>
 
 
 <div class='center'>
     <div class='gallery'>
-        <img src={img} class:imageflip>
+        <img src={img} class='imagetest' class:imageflip on:click={onClick}>
     </div>
 
     <div class="right-menu" class:hidden>
@@ -34,7 +66,7 @@
         <div class='title'>
             <h2>{songinfo.titleJP} - {songinfo.artistJP}</h2>
             <h3>{songinfo.title} - {songinfo.artist}</h3>
-            <h4>Charted by Commi</h4>
+            <h4>Charted by Evilleafy</h4>
         </div>
         
         <br> 
