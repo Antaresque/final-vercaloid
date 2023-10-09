@@ -19,7 +19,7 @@ export let perms: HintPermission[] = [
         { done: true, hint: false },
         { done: true, hint: false },
     ]},
-    { status: 'LOCKED', hints: [
+    { status: 'HINTS', hints: [
         { done: false, hint: false },
         { done: false, hint: false },
         { done: false, hint: false },
@@ -46,11 +46,12 @@ export const data = [
         { name: "A sudden group explosion", hint: '', solution: 'Have a result of all members in a coop fail during the match (by misscount or by in-game screen)' },
         { name: "Flow upward, release", hint: '', solution: 'Have a picture of missing up arrow hold' }
     ]},
-    { img: 'jacket_duo.jpg', hintsUrl: 'delinquent-duo', resultUrl: 'delinquent-duo-final', songInfo: {}, hints: [
-        { name: "Family outing", hint: '', solution: 'Have a result of a sibling song with one of the siblings in the result' },
-        { name: "A mascot concert", hint: '', solution: 'Have a result for Miku with one of her solo songs' },
-        { name: "A duo of glowsticks", hint: '', solution: 'Have at least two people together in a Virtual Show room' },
-        { name: "Showtime is over", hint: '', solution: 'Have a picture of losing a Showtime Ruler show, with Failed' }
+    { img: 'https://i.imgur.com/myiv8ER.png', hintsUrl: 'Untitled.mp3/ice-age', resultUrl: 'Untitled.mp3', songInfo: {}, hints: [
+        { name: "Dawn of a thousand stars", hint: '(requires result screenshot)', solution: 'Have a result with the song score or perfect count equal to 1000' },
+        { name: "The piano shifted wrong way", hint: '(requires result screenshot)', solution: 'Have a result with at least 88 wrong way greats' },
+        { name: "Blinded by snowflakes", hint: '', solution: 'Have a screenshot during Snow Miku song but played at very low speed' },
+        { name: "The clock strikes midnight", hint: '', solution: 'Have a screenshot at midnight (UTC time)' }
+        
     ]},
 ];
 
