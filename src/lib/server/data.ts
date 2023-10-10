@@ -19,7 +19,7 @@ export let perms: HintPermission[] = [
         { done: true, hint: false },
         { done: true, hint: false },
     ]},
-    { status: 'HINTS', hints: [
+    { status: 'OPEN', hints: [
         { done: true, hint: false },
         { done: true, hint: false },
         { done: true, hint: false },
@@ -46,7 +46,7 @@ export const data = [
         { name: "A sudden group explosion", hint: '', solution: 'Have a result of all members in a coop fail during the match (by misscount or by in-game screen)' },
         { name: "Flow upward, release", hint: '', solution: 'Have a picture of missing up arrow hold' }
     ]},
-    { img: 'https://i.imgur.com/myiv8ER.png', hintsUrl: 'Untitled.mp3/ice-age', resultUrl: 'Untitled.mp3', songInfo: {}, hints: [
+    { img: 'https://i.imgur.com/myiv8ER.png', hintsUrl: 'Untitled.mp3/ice-age', resultUrl: 'Untitled.mp3/chilling-acquiescence', songInfo: {}, hints: [
         { name: "Dawn of a thousand stars", hint: '(requires result screenshot)', solution: 'Have a result with the total combo or perfect count equal to 1000' },
         { name: "The piano shifted wrong way", hint: '(requires result screenshot)', solution: 'Have a result with at least 88 wrong way greats' },
         { name: "Blinded by snowflakes", hint: '', solution: 'Have a screenshot during Snow Miku song but played at very low speed' },
@@ -66,11 +66,11 @@ export const songInfo = [
     },
     { title: 'Holy Lance Explosion Boy', titleJP: '聖槍爆裂ボーイ', artist: 'rerulili', artistJP: 'れるりり', ogImage: 'https://i.imgur.com/ycAeJ8m.jpeg', 
       youtubeLink: 'https://www.youtube.com/watch?v=MqNmKnCNLyM', sonolusLink: 'https://cc.sevenc7c.com/charts/3x4c8RqNpjMV3UuPcZ9dp2t',
-      audioClip: 'https://puu.sh/JRJl3/44214327bb.mp3', difficultyLevel: '33', bpm: '155', progress: 0
+      audioClip: 'https://puu.sh/JRJl3/44214327bb.mp3', difficultyLevel: '33', bpm: '155', progress: 100
     },
-    { title: 'Yattare! Ongassen', titleJP: 'やったれ！音合戦', artist: 'marasy', artistJP: 'まらしぃ', ogImage: 'http://i.imgur.com/zx4QPhe.jpg', 
-      youtubeLink: 'https://www.youtube.com/watch?v=vsbaSbm09SM', sonolusLink: 'https://cc.sevenc7c.com/charts/3szZ4zLB9aGsquMEEgnH7BU',
-      audioClip: 'https://puu.sh/JQUu3/0516212026.mp3', difficultyLevel: '32', bpm: '190', progress: 0
+    { title: 'Snow Drive', titleJP: 'スノウドライヴ', artist: 'Omoi', artistJP: 'Omoi', ogImage: 'https://i.imgur.com/1wdTGHN.jpeg', 
+      youtubeLink: 'https://www.youtube.com/watch?v=JQjrfTh3J6c', sonolusLink: 'https://cc.sevenc7c.com/charts/3wywZyKGNtSCsk9j4Tn5gkB',
+      audioClip: 'https://puu.sh/JRWzw/9864bf314b.mp3', difficultyLevel: '34', bpm: '224', progress: 0
     }
 ];
 

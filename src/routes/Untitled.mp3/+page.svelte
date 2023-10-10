@@ -6,6 +6,13 @@
 
     export let data: PageData;
 
+    onMount(() => { 
+        const isAnimationDone = window.localStorage.getItem('snowAnimation');
+        if(isAnimationDone !== 'true') {
+             data.info[3].perms.status = 'HINTS';
+        }
+    });
+
 </script>
 
 <div class='center'>
